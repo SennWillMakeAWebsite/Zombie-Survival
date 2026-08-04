@@ -1,40 +1,4 @@
-const canvas = document.getElementById("game");
-const ctx = canvas.getContext("2d");
-
-// Resize canvas
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-resizeCanvas();
-window.addEventListener("resize", resizeCanvas);
-
-// Player
-const player = {
-    x: canvas.width / 2,
-    y: canvas.height / 2,
-    radius: 20,
-    speed: 5,
-    color: "#00BFFF"
-};
-
-// Keyboard
-const keys = {};
-
-window.addEventListener("keydown", (e) => {
-    keys[e.key.toLowerCase()] = true;
-});
-
-window.addEventListener("keyup", (e) => {
-    keys[e.key.toLowerCase()] = false;
-});
-
-// Update
-function update() {
-    if (keys["w"]) player.y -= player.speed;
-    if (keys["s"]) player.y += player.speed;
-    if (keys["a"]) player.x -= player.speed;
-    if (keys["d"]) player.x += player.speed;
+document.body.innerHTML = "<h1 style='color:white'>TES BERHASIL</h1>";    if (keys["d"]) player.x += player.speed;
 
     // Batas layar
     player.x = Math.max(player.radius, Math.min(canvas.width - player.radius, player.x));
