@@ -1,20 +1,15 @@
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = 800;
+canvas.height = 600;
 
+// Background hitam
+ctx.fillStyle = "black";
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+// Lingkaran merah
+ctx.beginPath();
+ctx.arc(400, 300, 50, 0, Math.PI * 2);
 ctx.fillStyle = "red";
-ctx.fillRect(100, 100, 100, 100);
-
-console.log("JS BERJALAN");            ctx.fill();
-}
-
-// Loop game
-function gameLoop() {
-    update();
-    draw();
-    requestAnimationFrame(gameLoop);
-}
-
-gameLoop();
+ctx.fill();
